@@ -139,6 +139,7 @@ public class EnemyControllerTree : MonoBehaviour
 
     public void DoPatrol()
     {
+        if (isWaiting || patrolPoints == null || patrolPoints.Count == 0) return;
         UpdateAnimation("isRunning", false);
         UpdateAnimation("isWalking", true);
 
@@ -161,6 +162,7 @@ public class EnemyControllerTree : MonoBehaviour
 
     public void DoRandomPatrol()
     {
+        if (isWaiting || patrolPoints == null || patrolPoints.Count == 0) return;
         UpdateAnimation("isRunning", false);
         UpdateAnimation("isWalking", true);
 
@@ -205,10 +207,14 @@ public class EnemyControllerTree : MonoBehaviour
     private IEnumerator WaitAtPoint(System.Action onComplete)
     {
         isWaiting = true;
+
+        // APAGAMOS TODO PARA QUE QUEDE EN IDLE PURO
         UpdateAnimation("isWalking", false);
-        yield return new WaitForSeconds(Random.Range(2.0f, 3.0f));
+        UpdateAnimation("isRunning", false);
+
+        yield return new WaitForSeconds(Random.Range(1.0f, 2.0f));
+
         onComplete?.Invoke();
         isWaiting = false;
-        UpdateAnimation("isWalking", true);
     }
 }
