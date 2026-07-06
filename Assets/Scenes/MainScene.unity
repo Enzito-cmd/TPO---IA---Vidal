@@ -3405,7 +3405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &206415750
 Transform:
   m_ObjectHideFlags: 0
@@ -5590,7 +5590,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   gridWorldSize: {x: 90, y: 104}
-  nodeRadius: 1
+  nodeRadius: 0.4
 --- !u!4 &334694681
 Transform:
   m_ObjectHideFlags: 0
@@ -5618,6 +5618,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e43090943f5814c9d238ba31dc31f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pathfinding
+  useThetaStar: 1
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &336270739
 GameObject:
   m_ObjectHideFlags: 0
@@ -14798,6 +14802,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d2fe710a16705b4a9ab62516faae13f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15140,6 +15148,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9d2fe710a16705b4a9ab62516faae13f, type: 3}
       propertyPath: m_Name
       value: Door (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d2fe710a16705b4a9ab62516faae13f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26596,6 +26608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d2fe710a16705b4a9ab62516faae13f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31920,7 +31936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7643547317407075811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}

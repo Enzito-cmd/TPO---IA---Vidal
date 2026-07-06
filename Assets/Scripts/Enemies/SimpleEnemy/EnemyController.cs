@@ -26,6 +26,8 @@ public class EnemyController : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
+        direction.y = 0;
+
         if (direction == Vector3.zero) return;
 
         transform.position += direction * walkSpeed * Time.deltaTime;

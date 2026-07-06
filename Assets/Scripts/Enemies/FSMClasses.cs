@@ -146,6 +146,8 @@ public class PatrolState : State
         if (currentPath.Count > 0)
         {
             Vector3 target = currentPath[0].worldPosition;
+            target.y = c.transform.position.y;
+
             Vector3 dir = c.steering.Seek(target);
             c.Move(dir);
 
@@ -331,6 +333,8 @@ public class RandomPatrolState : State
         if (currentPath != null && currentPath.Count > 0)
         {
             Vector3 target = currentPath[0].worldPosition;
+            target.y = c.transform.position.y;
+
             Vector3 dir = c.steering.Seek(target);
             c.Move(dir);
 
